@@ -1,96 +1,106 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+# Realtime Collaborative Computer Based Test (CBT)
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
+## 🎯 Deskripsi Aplikasi
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+Aplikasi Computer Based Test (CBT) adalah sistem ujian berbasis web yang dikembangkan untuk memfasilitasi pelaksanaan ujian atau tes secara digital dengan fokus pada kolaborasi real-time. Sistem ini dirancang untuk menggantikan metode ujian konvensional dengan solusi modern yang lebih efisien dan aman.
 
-## Features
+### Fitur Utama:
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Middleware
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+- ✅ **Manajemen Tes**: Pembuatan, pengelolaan, dan konfigurasi tes oleh administrator
+- 🔐 **Sistem Autentikasi**: Login dan manajemen pengguna dengan role-based access control
+- 📝 **Interface Ujian**: Antarmuka yang user-friendly untuk peserta ujian
+- 📊 **Monitoring Real-time**: Pemantauan aktivitas ujian secara langsung
+- 🏆 **Sistem Scoring**: Penilaian otomatis dan laporan hasil ujian
+- 🛡️ **Anti-Cheating Features**: Fitur keamanan untuk mencegah kecurangan
+- 👥 **Realtime Collaborative**: Mendukung tes yang dilakukan bersama dalam tim
 
-## Demo
+## 📋 Analisis Kebutuhan
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+### Kebutuhan Fungsional
 
-## Deploy to Vercel
+| Req-ID | Kebutuhan Fungsional   | Deskripsi                                           |
+| ------ | ---------------------- | --------------------------------------------------- |
+| F-01   | Autentikasi Pengguna   | Sistem login dan registrasi dengan verifikasi email |
+| F-02   | Manajemen Tes          | Fitur CRUD tes dengan pengaturan waktu dan password |
+| F-03   | Manajemen Soal         | Pembuatan soal dengan dukungan format Markdown      |
+| F-04   | Pelaksanaan Ujian      | Interface ujian dengan timer dan auto-save          |
+| F-05   | Sistem Penilaian       | Penilaian otomatis dan perhitungan skor             |
+| F-06   | Monitoring Ujian       | Pemantauan real-time dan laporan pelanggaran        |
+| F-07   | Manajemen Tim          | Pengelolaan tim/group peserta ujian                 |
+| F-08   | Laporan dan Analisis   | Laporan hasil dan analisis statistik                |
+| F-09   | Realtime Collaboration | Kolaborasi semi real-time antar anggota tim         |
 
-Vercel deployment will guide you through creating a Supabase account and project.
+### Tech Stack
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+**Frontend:**
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
+- Next.js TypeScript
+- Tailwind CSS
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+**Backend:**
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+- Next.js Server Rendering
 
-## Clone and run locally
+**Database:**
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+- Supabase PostgreSQL
 
-2. Create a Next.js app using the Supabase Starter template npx command
+## 🏗️ Arsitektur Aplikasi
 
-   ```bash
-   npx create-next-app -e with-supabase
-   ```
+Aplikasi menggunakan arsitektur full-stack modern dengan Next.js sebagai framework utama dan Supabase sebagai backend service.
 
-3. Use `cd` to change into the app's directory
+### Lapisan Arsitektur:
 
-   ```bash
-   cd name-of-new-app
-   ```
+1. **Client Layer**: Web & Mobile Browser
+2. **Frontend Layer**: Next.js dengan React components
+3. **Backend Layer**: Next.js API Routes
+4. **Database Layer**: Supabase PostgreSQL
 
-4. Rename `.env.example` to `.env.local` and update the following:
+## 🗄️ Pemodelan Data
 
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
-   ```
+### Entitas Utama:
 
-   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://app.supabase.com/project/_/settings/api)
+- **tests**: Data ujian dan konfigurasi
+- **questions**: Soal-soal ujian
+- **teams**: Tim peserta ujian
+- **test_sessions**: Sesi pengerjaan ujian
+- **answers**: Jawaban peserta
+- **scores**: Hasil penilaian
 
-5. You can now run the Next.js local development server:
+## 🚀 Implementasi
 
-   ```bash
-   npm run dev
-   ```
+### Fitur yang Telah Dikembangkan:
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+#### 1. Manajemen Tes dan Soal
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
+- Dashboard administrator untuk CRUD tes
+- Editor Markdown untuk pembuatan soal
+- Dukungan notasi matematis (KaTeX)
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+#### 2. Pelaksanaan Ujian Real-time
 
-## Feedback and issues
+- Interface kolaboratif untuk tim
+- Sinkronisasi jawaban real-time
+- Timer dan navigasi soal
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+#### 3. Sistem Penilaian Otomatis
 
-## More Supabase examples
+- Penilaian otomatis post-submission
+- Perhitungan skor berdasarkan kunci jawaban
+- Tampilan hasil instant
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+#### 4. Monitoring dan Manajemen
+
+- Dashboard monitoring sesi aktif
+- Manajemen pengguna dan tim
+- Laporan aktivitas mencurigakan
+
+## 🌐 Demo
+
+**Website CBT**: [https://cbt.runs.my.id](https://cbt.runs.my.id)
+
+## 📁 Source Code
+
+Repository GitHub: [https://github.com/runsdev/cbt-runsha](https://github.com/runsdev/cbt-runsha)
+
+---
