@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\(auth-pages)",
+    "\\app\\admin",
+    "\\app\\admin\\dashboard",
+    "\\app\\auth",
+    "\\app\\protected",
+    "\\components\\cbt",
+    "\\lib",
+    "\\utils",
+    "\\utils\\supabase"
+  ],
+  "SelectedNode": "\\app\\admin\\dashboard\\page.tsx",
+  "PreviewInSolutionExplorer": false
+}
